@@ -1,0 +1,9 @@
+# .gitignore
+.DS_Store
+*.log
+.gemini
+tmp/
+dist/
+node_modules/
+.vscode/
+.idea/

@@ -1,0 +1,52 @@
+/* css/variables.css */
+
+:root {
+    /* Color Palette - Premium Beauty Scheme */
+    --color-bg: #FDFBF7; /* Warm White */
+    --color-bg-secondary: #F4EAE6; /* Nude */
+    --color-accent: #E8D5D4; /* Pastel Pink */
+    --color-accent-hover: #D8C0BF; 
+    --color-overlay: rgba(0, 0, 0, 0.4); 
+    
+    --color-text: #2A2A2A; /* Almost Black */
+    --color-text-light: #666666; /* Gray for subtitles */
+    --color-white: #FFFFFF;
+    
+    /* Semantic Colors */
+    --color-error: #D9534F;
+    --color-success: #5CB85C;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    
+    /* Layout */
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 1.5rem;
+    --border-radius-xl: 2rem;
+    
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 1rem;
+    --spacing-4: 1.5rem;
+    --spacing-5: 2rem;
+    --spacing-6: 3rem;
+    --spacing-8: 4rem;
+    --spacing-12: 6rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Z-Index */
+    --z-navbar: 1000;
+    --z-overlay: 2000;
+    --z-cart: 2010;
+    --z-preloader: 9999;
+}

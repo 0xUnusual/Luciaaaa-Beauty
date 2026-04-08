@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>Luciaaaa | Belleza real, sin complicaciones</title>
+    <meta name="description"
+        content="Descubre Luciaaaa, cosméticos minimalistas y premium. Cruelty-free y naturales. Belleza real, sin complicaciones.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/components.css">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <h2 class="preloader-text">Luciaaaa</h2>
+    </div>
+
+    <!-- Header Wrapper (Promo + Navbar) -->
+    <div id="header-wrapper" class="header-wrapper">
+        <!-- Promo Bar -->
+        <div class="promo-bar">
+            Envíos gratis en pedidos mayores a $50 ✨ Usa el código BEAUTY10 para un 10% OFF
+        </div>
+
+        <!-- Navbar -->
+        <header class="navbar" id="navbar">
+            <div class="container navbar-container">
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger-btn" aria-label="Abrir menú" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="index.html" class="logo">Luciaaaa</a>
+
+                <nav class="nav-links" id="nav-links">
+                    <a href="#hero" class="active">Inicio</a>
+                    <a href="#products">Productos</a>
+                    <a href="#about">Sobre Nosotros</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button aria-label="Buscar" class="icon-btn search-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <button aria-label="Usuario" class="icon-btn user-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button aria-label="Carrito de compras" class="icon-btn cart-btn" id="open-cart-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-counter" id="cart-counter">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="close-search" id="close-search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar productos..." autofocus>
+            <div class="search-results" id="search-results">
+                <!-- Results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="close-cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart items injected here -->
+            <div class="empty-cart-msg">Tu carrito está vacío.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-full checkout-btn" id="proceed-checkout-btn">Proceder al
+                Pago</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <!-- Simulated background image using CSS later -->
+            <div class="hero-bg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Belleza real, sin complicaciones</h1>
+                    <p class="hero-subtitle">Descubre nuestra nueva línea de esenciales diarios. Cruelty-free y
+                        diseñados para realzar tu belleza natural.</p>
+                    <div class="hero-actions">
+                        <!-- Add product directly ID 1 -->
+                        <button class="btn btn-primary add-to-cart-direct" data-id="1">Comprar destacado</button>
+                        <a href="#products" class="btn btn-secondary">Ver colección</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section section-padding">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Nuestra Colección</h2>
+                    <p>Esenciales formulados con ingredientes premium para cuidado diario.</p>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Products injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image" data-aos="fade-right">
+                        <div class="image-wrapper">
+                            <!-- Image through CSS/JS placeholder -->
+                        </div>
+                    </div>
+                    <div class="about-content" data-aos="fade-left">
+                        <h2>Embrace Your Natural Glow</h2>
+                        <p>En Luciaaaa creemos que el maquillaje debe ser una extensión de tu piel, no una máscara.
+                            Nuestra historia comenzó con una sola misión: crear productos limpios y sin esfuerzo para el
+                            día a día.</p>
+
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <span class="value-icon">🐰</span>
+                                <h4>Cruelty-free</h4>
+                                <p>Nunca probamos en animales. Amamos a nuestros amigos peludos.</p>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-icon">🌿</span>
+                                <h4>100% Vegan</h4>
+                                <p>Ingredientes botánicos que cuidan tu piel desde adentro hacia afuera.</p>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-icon">✨</span>
+                                <h4>Minimalista</h4>
+                                <p>Menos productos, mejores resultados. Rutinas simplificadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section section-padding">
+            <div class="container" data-aos="zoom-in">
+                <div class="newsletter-card">
+                    <h2>Únete a la lista</h2>
+                    <p>Recibe early access a lanzamientos y un 10% de descuento en tu primera compra.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirme</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Luciaaaa</a>
+                <p>Redefiniendo la belleza moderna. Simple, limpia y hermosa.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                    <a href="#" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Comprar</h4>
+                    <a href="#">Todo</a>
+                    <a href="#">Skincare</a>
+                    <a href="#">Maquillaje</a>
+                    <a href="#">Sets</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Nosotros</h4>
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Ingredientes</a>
+                    <a href="#">Sustentabilidad</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Ayuda</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Envíos y Devoluciones</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Luciaaaa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AOS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <!-- AOS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Application Logic -->
+    <script src="./js/store.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
