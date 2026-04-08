@@ -20,13 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloader && typeof gsap !== 'undefined') {
         const tl = gsap.timeline();
         
-        tl.to('.preloader-text', { opacity: 1, duration: 1, ease: "power2.inOut" })
-          .to('.preloader-text', { opacity: 0, duration: 0.5, delay: 0.5 })
-          .to(preloader, { opacity: 0, duration: 0.8, onComplete: () => {
+        tl.to('.preloader-text', { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" })
+          .to('.preloader-bar', { width: '100%', duration: 1.5, ease: "power2.inOut" }, "-=0.5")
+          .to('.preloader-content', { opacity: 0, y: -20, duration: 0.8, delay: 0.2, ease: "power4.in" })
+          .to(preloader, { opacity: 0, duration: 1, ease: "expo.inOut", onComplete: () => {
               preloader.style.display = 'none';
-              
-              // Configurar posiciones iniciales para GSAP en base al CSS
-              gsap.set(['.hero-title', '.hero-subtitle', '.hero-actions'], { y: 50, opacity: 0 });
+          }});
+    }
+
+    // Configurar posiciones iniciales para GSAP en base al CSS
+    gsap.set(['.hero-title', '.hero-subtitle', '.hero-actions'], { y: 50, opacity: 0 });
               
               // Animación Pin + Reveal (Apple Style)
               const heroTl = gsap.timeline({
@@ -59,8 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                       scrub: true
                   }
               });
-          }});
-    }
 
     // --- 3. Renderizado Dinámico de Productos --- //
     const store = window.beautyyStore;

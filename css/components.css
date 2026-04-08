@@ -9,19 +9,35 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--color-bg-secondary);
-    z-index: var(--z-preloader);
+    background-color: var(--color-bg);
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.8s ease-out;
+    transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader-content {
+    text-align: center;
+    width: 250px;
 }
 
 .preloader-text {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-style: italic;
     color: var(--color-text);
-    opacity: 0; /* Will be animated with GSAP */
+    margin-bottom: var(--spacing-4);
+    font-family: var(--font-heading);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.preloader-bar {
+    width: 0%;
+    height: 1px;
+    background-color: var(--color-text);
+    margin: 0 auto;
+    opacity: 0.3;
 }
 
 /* =========================================
